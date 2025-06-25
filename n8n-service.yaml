@@ -17,4 +17,4 @@ spec:
     name: https
     port: 80
     targetPort: 5678
-    nodePort: 30017
+    nodePort: 30018
