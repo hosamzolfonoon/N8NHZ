@@ -18,27 +18,12 @@ spec:
       containers:
       - name: n8n
         image: n8nio/n8n:latest
-        imagePullPolicy: IfNotPresent
+        imagePullPolicy: always
         ports:
-        - name: http
+        - name: https
           containerPort: 5678
         envFrom:
         - configMapRef:
             name: n8n-configmap
         - secretRef:
             name: n8n-secrets
-        livenessProbe:
-          httpGet:
-            path: /healthz
-            port: 5678
-        readinessProbe:
-          httpGet:
-            path: /healthz
-            port: 5678
-        resources:
-          limits:
-            cpu: "1.0"
-            memory: "1024Mi"
-          requests:
-            cpu: "0.5"
-            memory: "512Mi"
