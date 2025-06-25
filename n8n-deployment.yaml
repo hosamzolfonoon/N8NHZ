@@ -18,7 +18,7 @@ spec:
       containers:
       - name: n8n
         image: n8nio/n8n:latest
-        imagePullPolicy: always
+        imagePullPolicy: Always
         ports:
         - name: https
           containerPort: 5678
