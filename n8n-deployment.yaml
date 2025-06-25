@@ -1,9 +1,8 @@
----
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: n8n-deployment
-  
+
   labels: &labels
     app: n8n
     component: deployment
@@ -27,3 +26,8 @@ spec:
             name: n8n-configmap
         - secretRef:
             name: n8n-secrets
+        env:
+        - name: N8N_HOST
+          value: "n8n.dataanalyst.pt"
+        - name: WEBHOOK_TUNNEL_URL
+          value: "https://n8n.dataanalyst.pt/"
